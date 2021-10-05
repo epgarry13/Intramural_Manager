@@ -3,3 +3,5 @@ api/firebasekey.json
 node_modules
 
 api/__pycache__
+api/venv
+yarn.lock

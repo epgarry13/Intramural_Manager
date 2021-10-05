@@ -1,0 +1,25 @@
+.header_container_details{
+    width: 75%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    &>*{
+        width: 30%;
+        text-align: center;        
+    }
+}
+
+.details_container{
+    width: 75%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    &>*{
+        width: 30%;
+        text-align: center;        
+    }
+}
+
+.mt-20{
+    margin-top: 60px;
+}

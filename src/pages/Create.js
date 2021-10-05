@@ -3,15 +3,6 @@ import axios from "axios";
 import "../styles/create.scss";
 
 function Create() {
-//   const [text, setText] = useState("");
-//   const [day, setDay] = useState("");
-//   const [dayInput, setDayInput] = useState("");
-
-//   const [todoEditing, setToDoEditing] = useState(null);
-//   const [editingText, setEditingText] = useState("");
-
-//   const [displayData, setDisplay] = useState([]);
-
 
   // DYNAMIC FORM FUNCTIONS FOR TEAM MEMBERS
   const [inputList, setInputList] = useState([

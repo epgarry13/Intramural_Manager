@@ -1,0 +1,14 @@
+.header_container, .indiv_game{
+    display: flex;
+    width: 100%;
+    &>*{
+        width: 20%;
+        text-align: center;
+    }
+}
+
+.indiv_game{
+    margin-top: 20px;
+    border: 1px solid;
+    
+}

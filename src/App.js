@@ -4,8 +4,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 // import ScrollToTop from "./component/scrollToTop";
 
 import Create from "./pages/Create";
-// import Details from "./pages/Details";
-import Summary from "./pages/Summary";
+import Details from "./pages/Details";
+import Summary from "./pages/Summary";;
 
 
 function App() {
@@ -20,9 +20,10 @@ function App() {
             <Summary />
           </Route>
 
-          {/* <Route exact path="/details">
-            <Details />
-          </Route> */}
+          <Route exact path="/details/:id" render={(props) => <Details id={props.match.params.id}/>}/>
+          
+            
+          
 
           <Route>
             <h1>Not found!</h1>
