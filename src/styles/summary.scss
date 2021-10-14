@@ -1,14 +1,40 @@
-.header_container, .indiv_game{
+.header_container{
+    // border: 1px solid;
     display: flex;
-    width: 100%;
+    justify-content: space-between;
     &>*{
-        width: 20%;
+        height: 50px;
+        width: 300px;
+        // border: 2px solid;
         text-align: center;
     }
 }
 
 .indiv_game{
     margin-top: 20px;
-    border: 1px solid;
-    
+    // border: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    // border: 1px solid;
+    padding: 20px 10px 10px 10px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    &>*{
+        height: 100px;
+        width: 300px;
+        // border: 2px solid;
+        text-align: center;
+        text-decoration: none;
+        
+        
+    }
+    &:hover{
+        transform: translateY(-5px);
+        transition: .3s ease;
+    }
+}
+
+a{
+    text-decoration: none;
+    color: black;
 }

@@ -23,6 +23,12 @@ function Details(props) {
       });
   }
 
+  function deletePlayer(e){
+    axios.delete("http://127.0.0.1:5000/delete/" + props.id + "/" + e).then((response) => {
+        setAttendance(response.data.data[0]["attendees"]);
+      });
+  }
+
   return (
     <>
       <div className="page_container">
@@ -62,6 +68,7 @@ function Details(props) {
                 <div className="attendee" key={item.name}>
                   {item.name}
                   <button onClick={() => makeBackup(item.name)}>Make Backup</button>
+                  <button onClick={() => deletePlayer(item.name)}>Delete</button>
                 </div>
               );
             })

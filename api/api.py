@@ -106,24 +106,34 @@ def update(id):
     except Exception as e:
         return f"An Error Occured: {e}"
 
-# @app.route('/delete/<day>/<id>', methods=['GET', 'DELETE'])
-# def delete(day, id):    
-#     try:        
+@app.route('/delete/<id>/<name>', methods=['DELETE'])
+def delete(id, name):    
+    try:        
         
         
-#         todo_ref.document(id).delete()
+        teamMemberToMove = name
 
-#         all_todos = [doc.to_dict() for doc in todo_ref.stream()]
-#         res = []
-#         for toDo in all_todos:    
-#             if toDo['day'] == day:       
-#                 res.append([toDo['text'], toDo['id']])
-#         print(res)
-#         return jsonify(data=res)
+        games = [doc.to_dict() for doc in schedule.stream()]                 
+        res = []
+        for game_ref in games:
+            if game_ref['id'] == id:
+                res.append(game_ref)
         
+        attendees = res[0]['attendees']
+        newAtt = []
 
-#     except Exception as e:
-#         return f"An Error Occured: {e}"
+        for att in attendees:
+            if att['name'] != teamMemberToMove:
+                newAtt.append(att)
+
+        res[0]['attendees'] = newAtt                
+        # make update to schedule3
+        game_ref = schedule.document(id)
+        game_ref.update({u'attendees': newAtt})
+        return jsonify(data=res)
+
+    except Exception as e:
+        return f"An Error Occured: {e}"
 
 
 if __name__ == "__main__":
