@@ -3,5 +3,11 @@ api/firebasekey.json
 node_modules
 
 api/__pycache__
+<<<<<<< Updated upstream
 api/venv
 yarn.lock
+=======
+
+api/venv/
+api/.flaskenv
+>>>>>>> Stashed changes
